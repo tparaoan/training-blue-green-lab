@@ -13,11 +13,11 @@ resource "aws_lb_target_group" "green_target" {
 }
 
 resource "aws_autoscaling_attachment" "asg_attachment_blue" {
-    autoscaling_group_name = aws_autoscaling_group.blue.id
-    lb_target_group_arn = aws_lb_target_group.blue_target.arn
+  autoscaling_group_name = aws_autoscaling_group.blue.id
+  lb_target_group_arn    = aws_lb_target_group.blue_target.arn
 }
 
 resource "aws_autoscaling_attachment" "asg_attachment_green" {
-    autoscaling_group_name = aws_autoscaling_group.green.id
-    lb_target_group_arn = aws_lb_target_group.green_target.arn
+  autoscaling_group_name = aws_autoscaling_group.green.id
+  lb_target_group_arn    = aws_lb_target_group.green_target.arn
 }
